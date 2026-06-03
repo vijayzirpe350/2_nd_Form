@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MODEL.Employee_Model>
+
+@{
+    ViewBag.Title = "EmployList";
+}
+
+
+<h2>EmployList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateEmp")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Resume)
+        </th>
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.CountryId)
+        </th>*@
+
+        <th>
+            @Html.DisplayNameFor(model => model.CountryName)
+        </th>
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.StateId)
+        </th>*@
+
+        <th>
+            @Html.DisplayNameFor(model => model.StateName)
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resume)
+        </td>
+
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CountryId)
+        </td>*@
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CountryName)
+        </td>
+
+        @*<td>
+            @Html.DisplayFor(modelItem => item.StateId)
+        </td>*@
+
+        <td>
+            @Html.DisplayFor(modelItem => item.StateName)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+ }
+
+</table>
