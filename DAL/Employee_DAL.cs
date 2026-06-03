@@ -96,6 +96,7 @@ namespace DAL
         }
 
 
+
         public List<Employee_Model> EmployList()
         {
             SqlConnection con = new SqlConnection(str);
@@ -128,8 +129,6 @@ namespace DAL
             return lst;
 
         }
-
-
 
     }
 }
